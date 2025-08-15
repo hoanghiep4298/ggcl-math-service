@@ -28,6 +28,7 @@ pipeline {
                     "cd ${APP_DIR} && \\
                     git pull origin ${GIT_BRANCH} && \\
                     npm install --production && \\
+                    npm ci && \\
                     npm run build && \\
                     pm2 restart ${APP_NAME} || pm2 start dist/main.js --name ${APP_NAME}"
                 """
