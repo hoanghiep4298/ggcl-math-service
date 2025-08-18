@@ -8,7 +8,6 @@ export class AppController {
 
   @MessagePattern({ cmd: 'sum' })
   sum(numbers: number[]): number {
-    // return numbers.reduce((a, b) => a + b, 0);
-    return 123456;
+    return numbers.reduce((a, b) => a + b, 0);
   }
 }
