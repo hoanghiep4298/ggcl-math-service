@@ -16,7 +16,7 @@ spec:
       - name: ggcl-math-service
         image: hoanghiep4298/math-service:latest
         ports:
-        - containerPort: 4000                 # ggcl-math-service chạy port 4000
+        - containerPort: 8800                 # ggcl-math-service chạy port 8800
 ---
 apiVersion: v1
 kind: Service
@@ -27,5 +27,5 @@ spec:
     app: ggcl-math-service
   type: ClusterIP               # chỉ nội bộ cluster, không public ra ngoài
   ports:
-    - port: 4000
-      targetPort: 4000
+    - port: 8800
+      targetPort: 8800
