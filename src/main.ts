@@ -7,7 +7,7 @@ async function bootstrap() {
     AppModule,
     {
       transport: Transport.TCP,
-      options: { host: '0.0.0.0', port: 4000 },
+      options: { host: '0.0.0.0', port: 8800 },
       logger: ['log', 'debug', 'error', 'warn', 'verbose'], // bật log chi tiết
     },
   );
