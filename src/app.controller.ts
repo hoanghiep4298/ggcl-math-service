@@ -1,13 +1,11 @@
 import { Controller } from '@nestjs/common';
-import { AppService } from './app.service';
-import { MessagePattern } from '@nestjs/microservices';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
-  @MessagePattern({ cmd: 'sum' })
-  sum(numbers: number[]): number {
-    return numbers.reduce((a, b) => a + b, 0);
+  @MessagePattern('test.sum')
+  accumulate(@Payload() data: number[]): any {
+    const result = (data || []).reduce((a, b) => a + b, 0);
+    return { total: result };
   }
 }
